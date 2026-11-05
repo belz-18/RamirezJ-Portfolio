@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A personal portfolio sharing the story, milestones, family, and friends of Jheily Ramirez."
+    />
+    <meta name="theme-color" content="#f7f5ef" />
+    <title>Jheily Ramirez — Personal Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body data-theme="dark">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Jheily Ramirez, home">
+        <img
+          class="brand-avatar"
+          src="assets/profile.png"
+          alt=""
+        />
+        <span>Jheily Ramirez<span class="brand-period">.</span></span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="navigation" id="primary-navigation" aria-label="Main navigation">
+        <a class="nav-link is-active" href="#home">Home</a>
+        <a class="nav-link" href="#about">Personal Information</a>
+        <a class="nav-link" href="#achievements">Achievements</a>
+        <a class="nav-link" href="#people">Family &amp; Friends</a>
+      </nav>
+      <div class="appearance-controls">
+        <div class="accent-picker">
+          <button
+            class="appearance-button accent-toggle"
+            type="button"
+            aria-label="Choose accent color"
+            aria-expanded="false"
+            aria-controls="accent-menu"
+          >◉</button>
+          <div class="accent-menu" id="accent-menu" hidden>
+            <span>Accent color</span>
+            <button type="button" class="accent-swatch is-selected" data-accent="#ef233c" aria-label="Red accent"></button>
+            <button type="button" class="accent-swatch" data-accent="#c1122f" aria-label="Crimson accent"></button>
+            <button type="button" class="accent-swatch" data-accent="#ff3b30" aria-label="Scarlet accent"></button>
+            <button type="button" class="accent-swatch" data-accent="#ff7180" aria-label="Rose accent"></button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="hero section-wrap" id="home" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> A little about me</p>
+          <p class="hero-description">
+            Hello, I’m <strong>Jheily Ramirez</strong> — I am a dedicated student
+            with a passion for learning, exploring creative ideas, and growing
+            both academically and personally. I value teamwork, attention to
+            detail, and continuous improvement. I strive to turn challenges
+            into opportunities to build new skills and create meaningful work.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#about">Get to know me <span>↓</span></a>
+            <a class="text-link" href="#achievements">Explore my journey <span>↗</span></a>
+          </div>
+          <div class="hero-signoff">
+            <span class="signoff-rule"></span>
+            <span>Making the most of every chapter</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <article class="profile-card" aria-label="Profile card for Jheily Ramirez">
+            <div class="profile-card__body">
+              <div class="profile-card__tile">
+                <img
+                  class="profile-card__photo"
+                  src="assets/profile.png"
+                  alt="Portrait of a smiling person outdoors"
+                />
+                <span class="profile-card__sheen" aria-hidden="true"></span>
+                <span class="profile-card__holo" aria-hidden="true"></span>
+                <span class="profile-card__scrim" aria-hidden="true"></span>
+                <div class="profile-card__info">
+                  <h2 class="profile-card__name">Jheily Ramirez</h2>
+                  <p class="profile-card__title">BSIT : Net Security</p>
+                </div>
+                <span class="profile-card__glare" aria-hidden="true"></span>
+                <span class="profile-card__rim" aria-hidden="true"></span>
+              </div>
+              <div class="profile-card__footer">
+                <span class="profile-card__meta">
+                  <span class="profile-card__handle">University of the Cordilleras</span>
+                </span>
+              </div>
+            </div>
+          </article>
+          <div class="photo-caption"><span>01</span> THE EVERYDAY EDITION</div>
+          <span class="hero-scribble" aria-hidden="true">✳</span>
+        </div>
+        <div class="home-extras">
+          <div class="interest-ticker" aria-label="A few things I value">
+            <span>Curiosity</span><i>✳</i><span>Creativity</span><i>✳</i><span>Kindness</span><i>✳</i><span>Good company</span><i>✳</i><span>New things</span>
+          </div>
+          <div class="feature-cards" aria-label="Explore the portfolio">
+            <a class="feature-card" href="#about">
+              <span><strong>Personal Information</strong><small>Get to know the person behind the page.</small></span>
+            </a>
+            <a class="feature-card" href="#achievements">
+              <span><strong>Achievements</strong><small>Discover the goals I’ve reached and lessons I’ve learned.</small></span>
+            </a>
+            <a class="feature-card" href="#people">
+              <span><strong>Family &amp; Friends</strong><small>Meet the people who make every moment meaningful.</small></span>
+            </a>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#about" aria-label="Open personal information">
+          <span>Choose a section to explore</span><span class="scroll-arrow">↗</span>
+        </a>
+      </section>
+
+      <section class="about section-wrap section-pad" id="about" aria-labelledby="about-title">
+        <div class="section-heading">
+          <p class="eyebrow"><span class="eyebrow-line"></span> The person behind the page</p>
+          <span class="section-index">01 / 04</span>
+        </div>
+        <div class="about-layout">
+          <div class="about-title-block">
+            <h2 id="about-title">Greetings!<br />I am <em>Ramirez, Jheily.</em></h2>
+            <p class="about-intro">
+              A dedicated student with a passion for learning, creativity, and
+              personal growth.
+            </p>
+          </div>
+          <div class="about-details info-profile-card" aria-label="Personal information profile card">
+            <article class="detail-row">
+              <span class="detail-number">01</span>
+              <div>
+                <h3>Age</h3>
+                <p>18 years old</p>
+              </div>
+              <span class="detail-icon" aria-hidden="true">✳</span>
+            </article>
+            <article class="detail-row">
+              <span class="detail-number">02</span>
+              <div>
+                <h3>Birthday</h3>
+                <p>June 10, 2008</p>
+              </div>
+              <span class="detail-icon" aria-hidden="true">✳</span>
+            </article>
+            <article class="detail-row">
+              <span class="detail-number">03</span>
+              <div>
+                <h3>My motto</h3>
+                <p>“What is beauty if your devotion to God is empty.”</p>
+              </div>
+              <span class="detail-icon" aria-hidden="true">♡</span>
+            </article>
+            <article class="detail-row">
+              <span class="detail-number">04</span>
+              <div>
+                <h3>Hobbies</h3>
+                <p>Editing, painting, and journaling</p>
+              </div>
+              <span class="detail-icon" aria-hidden="true">✳</span>
+            </article>
+            <article class="detail-row">
+              <span class="detail-number">05</span>
+              <div>
+                <h3>Address</h3>
+                <p>#49 City Camp Central, Baguio City</p>
+              </div>
+              <span class="detail-icon" aria-hidden="true">⌖</span>
+            </article>
+            <div class="education">
+              <h3 class="education-title">School attainment</h3>
+              <div class="education-list">
+                <article class="education-item">
+                  <h4>Elementary</h4>
+                  <p>Batuan Elementary School</p>
+                  <span>2016–2020</span>
+                </article>
+                <article class="education-item">
+                  <h4>Junior &amp; Senior High School</h4>
+                  <p>Tuba National High School</p>
+                  <span>2021–2026</span>
+                </article>
+                <article class="education-item">
+                  <h4>College</h4>
+                  <p>University of the Cordilleras</p>
+                  <span>2026–onwards</span>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hobbies-section" aria-labelledby="hobbies-title">
+          <div class="hobbies-heading">
+            <p class="eyebrow"><span class="eyebrow-line"></span> A few things I love to do</p>
+            <h3 id="hobbies-title">My <em>hobbies.</em></h3>
+          </div>
+          <div class="hobby-grid">
+            <article class="hobby-card">
+              <span class="hobby-symbol" aria-hidden="true">✦</span>
+              <h4>Editing</h4>
+              <p>
+                I find joy in weaving raw moments into meaningful stories
+                through photo and video editing. It teaches me to observe
+                subtle details, balance elements, and craft purposeful visuals
+                — precision I carry into my IT journey.
+              </p>
+            </article>
+            <article class="hobby-card">
+              <span class="hobby-symbol" aria-hidden="true">✎</span>
+              <h4>Painting</h4>
+              <p>
+                Painting is my quiet sanctuary. Each stroke calls for patience,
+                careful planning, and an open imagination. It trains my eyes to
+                see beyond the surface and embrace the beauty of the process as
+                much as the finished work.
+              </p>
+            </article>
+            <article class="hobby-card">
+              <span class="hobby-symbol" aria-hidden="true">▤</span>
+              <h4>Journaling</h4>
+              <p>
+                Journaling is where my heart finds its voice. It is my space to
+                reflect, untangle my thoughts, trace my growth, and anchor
+                myself in my faith and core values as I move forward each day.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="achievements section-wrap section-pad"
+        id="achievements"
+        aria-labelledby="achievements-title"
+      >
+        <div class="section-heading">
+          <p class="eyebrow"><span class="eyebrow-line"></span> Little wins, big lessons</p>
+          <span class="section-index">02 / 04</span>
+        </div>
+        <div class="achievements-heading">
+          <h2 id="achievements-title">Coming <span>soon.</span></h2>
+        </div>
+        <div class="achievement-grid">
+          <article class="achievement-card achievement-coming-soon">
+            <span class="achievement-symbol" aria-hidden="true">✳</span>
+            <p>New milestones and stories are on the way.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="people section-wrap section-pad" id="people" aria-labelledby="people-title">
+        <div class="section-heading">
+          <p class="eyebrow"><span class="eyebrow-line"></span> My favorite kind of company</p>
+          <span class="section-index">03 / 04</span>
+        </div>
+        <div class="achievements-heading">
+          <h2 id="people-title">Coming <span>soon.</span></h2>
+        </div>
+        <div class="achievement-grid">
+          <article class="achievement-card achievement-coming-soon">
+            <span class="achievement-symbol" aria-hidden="true">♡</span>
+            <p>Stories about my family and friends are on the way.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="closing section-wrap" aria-label="Closing note">
+        <span class="closing-spark" aria-hidden="true">✳</span>
+        <p>Thanks for stopping by.</p>
+        <h2>There’s always<br />more to <em>the story.</em></h2>
+        <a class="button button-light" href="#home">Back to the top <span>↑</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer section-wrap">
+      <p>Made with care, and a little bit of personality.</p>
+      <a href="#home" class="back-top">BACK TO TOP <span>↑</span></a>
+    </footer>
+  </body>
+</html>

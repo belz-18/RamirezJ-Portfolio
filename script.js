@@ -5,6 +5,7 @@ const sections = document.querySelectorAll("main > section[id]");
 const accentToggle = document.querySelector(".accent-toggle");
 const accentMenu = document.querySelector(".accent-menu");
 const tiltCards = document.querySelectorAll(".profile-card, .info-profile-card");
+const awardGalleries = document.querySelectorAll(".award-gallery");
 
 if (tiltCards.length && matchMedia("(hover: hover) and (pointer: fine)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
   const resetProfileCard = (card) => {
@@ -100,8 +101,37 @@ document.addEventListener("click", (event) => {
   }
 });
 
+const moveToSection = (offset) => {
+  const sectionIds = [...sections].map((section) => section.id);
+  if (!sectionIds.length) {
+    return;
+  }
+
+  const currentIndex = sectionIds.indexOf(window.location.hash.slice(1) || "home");
+  const safeIndex = currentIndex === -1 ? 0 : currentIndex;
+  const targetIndex = (safeIndex + offset + sectionIds.length) % sectionIds.length;
+  const targetId = sectionIds[targetIndex];
+
+  activateSection(targetId);
+  if (window.location.hash !== `#${targetId}`) {
+    window.history.pushState(null, "", `#${targetId}`);
+  }
+};
+
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {
+    if (link.classList.contains("back-history")) {
+      event.preventDefault();
+      moveToSection(-1);
+      return;
+    }
+
+    if (link.classList.contains("next-page")) {
+      event.preventDefault();
+      moveToSection(1);
+      return;
+    }
+
     const targetId = link.getAttribute("href").slice(1);
     if (targetId === "main") {
       event.preventDefault();
@@ -123,6 +153,40 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
 window.addEventListener("popstate", () => {
   activateSection(window.location.hash.slice(1) || "home");
+});
+
+awardGalleries.forEach((gallery) => {
+  const slides = gallery.querySelectorAll(".award-slide");
+  const nextButton = gallery.querySelector(".award-next");
+  const previousButton = gallery.querySelector(".award-previous");
+
+  if (!slides.length || !nextButton || !previousButton) {
+    return;
+  }
+
+  let awardIndex = 0;
+
+  const showAwardSlide = (index) => {
+    slides.forEach((slide, slideIndex) => {
+      const isActive = slideIndex === index;
+      slide.classList.toggle("is-active", isActive);
+      slide.setAttribute("aria-hidden", String(!isActive));
+    });
+
+    nextButton.setAttribute("aria-label", `Show next certificate (${index + 1} of ${slides.length})`);
+  };
+
+  nextButton.addEventListener("click", () => {
+    awardIndex = (awardIndex + 1) % slides.length;
+    showAwardSlide(awardIndex);
+  });
+
+  previousButton.addEventListener("click", () => {
+    awardIndex = (awardIndex - 1 + slides.length) % slides.length;
+    showAwardSlide(awardIndex);
+  });
+
+  showAwardSlide(awardIndex);
 });
 
 activateSection(window.location.hash.slice(1) || "home");
